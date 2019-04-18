@@ -5,9 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AddUserToPLUS"
         mc:Ignorable="d" WindowStyle="ToolWindow"
-        Title="Add User" Height="200" Width="500">
+        Title="Add User" Height="240" Width="500">
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
@@ -23,6 +24,11 @@
         <TextBox Margin="5 10" Grid.Row="1" Grid.Column="1" Text="{Binding UserName}"></TextBox>
         <TextBlock Margin="5 10" Grid.Row="2" Grid.Column="0" Text="Password"></TextBlock>
         <TextBox Margin="5 10" Grid.Row="2" Grid.Column="1" Text="{Binding Password}"></TextBox>
-        <Button Margin="5 10" Grid.Row="3" Grid.ColumnSpan="2" Content="Add" Width="80" Height="25" Command="{Binding AddUserCommand}"></Button>
+        <TextBlock Margin="5 10" Grid.Row="3" Grid.Column="0" Text="Users to be added"></TextBlock>
+        <TextBox Margin="5 10" Grid.Row="3" Grid.Column="1" Text="{Binding UsersCount}"></TextBox>
+        <StackPanel Orientation="Horizontal" Grid.Row="4" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Stretch">
+            <Button Margin="5 10" Content="Add" Width="80" Height="25" Command="{Binding AddUserCommand}"></Button>
+            <Button Margin="5 10" Content="Add Multiple Users" Width="120" Height="25" Command="{Binding AddMultipleUsersCommand}"></Button>
+        </StackPanel>
     </Grid>
 </Window>
